@@ -1,0 +1,16 @@
+.scrollable {
+  &::-webkit-scrollbar {
+    width: 8px;
+    position: absolute;
+
+    &-track {
+      background-color: var(--clr-b-15);
+      border-radius: 4px;
+    }
+
+    &-thumb {
+      border-radius: 4px;
+      background-color: var(--clr-b-30);
+    }
+  }
+}

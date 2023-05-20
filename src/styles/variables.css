@@ -1,0 +1,19 @@
+:root {
+  --bg-primary: #eef7f9;
+
+  --clr-project: #c765f5;
+  --clr-task: #659ff5;
+
+  --clr-b-100: #171618;
+  --clr-b-90: #2e2e30;
+  --clr-b-50: #8b8b8c;
+  --clr-b-30: #bababa;
+  --clr-b-20: #d0d0d1;
+  --clr-b-15: #dcdcdd;
+  --clr-b-1: #fdfdfd;
+
+  --width-task: 277px;
+  --width-table-task: 301px;
+
+  --height-table-task: 703px;
+}
