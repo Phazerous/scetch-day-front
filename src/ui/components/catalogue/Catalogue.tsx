@@ -5,9 +5,10 @@ import scrollable from '../../../styles/scrollable.module.scss';
 
 interface CatalogueProps {
   catalogue: Catalogue;
+  onDrop: (e: React.DragEvent<HTMLDivElement>, projectID: number) => void;
 }
 
-export default function Catalogue({ catalogue }: CatalogueProps) {
+export default function Catalogue({ catalogue, onDrop }: CatalogueProps) {
   const combinedStyles = styles.table + ' ' + scrollable.scrollable;
 
   return (
@@ -15,6 +16,9 @@ export default function Catalogue({ catalogue }: CatalogueProps) {
       <div className={combinedStyles}>
         {catalogue.projects.map((project) => (
           <Project
+            onDrop={(e: React.DragEvent<HTMLDivElement>) =>
+              onDrop(e, project.id)
+            }
             key={project.id}
             project={project}
           />

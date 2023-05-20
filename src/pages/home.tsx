@@ -32,11 +32,44 @@ export default function Home() {
     setCatalogue(updatedCatalogue);
   };
 
+  const handleDrop = (
+    e: React.DragEvent<HTMLDivElement>,
+    projectID: number
+  ) => {
+    const tasks = [
+      ...catalogue.tasks,
+      ...catalogue.projects.flatMap((project) => project.tasks),
+    ];
+
+    const taskID = +e.dataTransfer.getData('taskID');
+
+    const currentTask = tasks.find((task) => task.id === taskID) as Task;
+
+    if (isNaN(taskID)) return;
+
+    let updatedCatalogue = {
+      projects: catalogue.projects.map((project) => ({
+        ...project,
+        tasks: project.tasks.filter((task) => task.id !== taskID),
+      })),
+      tasks: catalogue.tasks.filter((task) => task.id !== taskID),
+    };
+
+    updatedCatalogue.projects
+      .find((project) => project.id === projectID)
+      ?.tasks.push(currentTask);
+
+    setCatalogue(updatedCatalogue);
+  };
+
   return (
     <>
       <div style={{ marginLeft: '100px', marginTop: '100px', width: '301px' }}>
         <TaskCreationField onAdd={handleAdd} />
-        <Catalogue catalogue={catalogue} />
+        <Catalogue
+          catalogue={catalogue}
+          onDrop={handleDrop}
+        />
       </div>
     </>
   );

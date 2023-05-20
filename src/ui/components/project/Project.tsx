@@ -6,16 +6,23 @@ import Task from '../task/Task';
 
 interface ProjectProps {
   project: Project;
+  onDrop: (e: React.DragEvent<HTMLDivElement>) => void;
 }
 
-export default function Project({ project }: ProjectProps) {
+export default function Project({ project, onDrop }: ProjectProps) {
   const [isExpanded, setExpanded] = useState(false);
 
   const handleExpand = () => setExpanded(!isExpanded);
 
+  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+  };
+
   return (
     <>
       <TaskField
+        onDragOver={handleDragOver}
+        onDrop={onDrop}
         className={styles.borderColor}
         onClick={handleExpand}>
         <h6>{project.title}</h6>
