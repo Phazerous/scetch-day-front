@@ -17,7 +17,9 @@ button,
 textarea,
 a,
 input,
-label {
+label,
+span,
+body {
   font-family: 'Segoe UI', sans-serif;
   font-weight: 400;
 }

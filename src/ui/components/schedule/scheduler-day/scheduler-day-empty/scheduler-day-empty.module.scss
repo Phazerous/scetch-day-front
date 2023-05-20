@@ -1,0 +1,13 @@
+.dropArea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  background-color: var(--clr-b-15);
+  padding: 25px 0;
+
+  border: 1px solid var(--clr-b-7);
+  border-radius: 0 0 8px 8px;
+}

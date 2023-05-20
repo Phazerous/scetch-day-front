@@ -3,6 +3,7 @@
 
   --clr-project: #c765f5;
   --clr-task: #659ff5;
+  --clr-hyper: #0099ff;
 
   --clr-b-100: #171618;
   --clr-b-90: #2e2e30;
@@ -19,4 +20,6 @@
   --width-table-task: 301px;
 
   --height-table-task: 703px;
+
+  --width-scheduler-day: 167px;
 }
