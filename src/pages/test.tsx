@@ -1,3 +1,4 @@
+import DailyBoard from '../ui/components/daily-board/DailyBoard';
 import Schedule from '../ui/components/schedule/Schedule';
 import Task from '../ui/components/task/Task';
 
@@ -9,9 +10,7 @@ const task = {
 export default function test() {
   return (
     <>
-      <Task task={task} />
-
-      <Schedule />
+      <DailyBoard />
     </>
   );
 }

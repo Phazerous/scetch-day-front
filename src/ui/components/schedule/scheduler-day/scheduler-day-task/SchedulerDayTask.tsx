@@ -24,11 +24,6 @@ export default function SchedulerDayTask({
     e.currentTarget.classList.add(styles.draggedOver);
   };
 
-  const handleDragLeave = (e: React.DragEvent<HTMLDivElement>) => {
-    setDraggedOver(false);
-    e.currentTarget.classList.remove(styles.draggedOver);
-  };
-
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     onDrop(e);
     setDraggedOver(false);
@@ -40,7 +35,6 @@ export default function SchedulerDayTask({
       <div
         className={combinedStyle}
         onDragOver={handleDragOver}
-        onDragLeave={handleDragLeave}
         onDrop={handleDrop}>
         <span className={`${isDraggedOver ? styles.notSelectable : ''}`}>
           {task.title + ' ' + idx}
